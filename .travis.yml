@@ -16,6 +16,15 @@ before_script:
 language: python
 python:
   - "3.6"
+env:
+- DJANGO=2.0 DB=postgres
+before_install: 
+- cd decide
+install: 
+- pip install -r ../requirements.txt
+script: 
+- python manage.py test
+
 install:
   - pip install -r requirements.txt
   - pip install codacy-coverage
